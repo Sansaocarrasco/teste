@@ -9,6 +9,11 @@ else:
 
 # Application definition
 INSTALLED_APPS = [
+
+
+
+
+    
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +47,8 @@ INSTALLED_APPS = [
 
 ]
 
+
+
 # configurações servem apenas para send_common (SMTP using DJango)
 EMAIL_HOST = 'smtp.xxxxxxxxx.com'
 EMAIL_USE_TLS = True
@@ -50,6 +57,10 @@ EMAIL_HOST_USER = 'no-reply@projetosd.com.br'
 EMAIL_HOST_PASSWORD = 'xxxxxxxxxx' 
 DEFAULT_FROM_EMAIL = 'no-reply@projetosd.com.br'
 DEFAULT_REPLY_TO = 'falecom@projetosd.com.br'
+
+LOGIN_REDIRECT_URL = '/'  # Página para onde o usuário será redirecionado após o login
+LOGOUT_REDIRECT_URL = '/'  # Página para onde o usuário será redirecionado após o logout
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

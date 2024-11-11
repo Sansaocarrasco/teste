@@ -8,5 +8,6 @@ from django.urls import path, include  # add this
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),                # Django admin route
+    path('accounts/', include('allauth.urls')),  # Inclua as URLs do allauth
 
 ]
