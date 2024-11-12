@@ -11,7 +11,7 @@ SECRET_KEY = "X4hLwoSsPFdHQamfLcYo38iugUCd-HbZx4eNUTqrM3o"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.getenv("DEBUG", 'False').lower() in ('1', 'true', 't', 'yes', 'y')
-DEBUG = 1
+DEBUG = True
 
 # load production server from .env
 ALLOWED_HOSTS        = ['*']
@@ -102,7 +102,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, "apps/templates")  # ROOT dir for template
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATE_DIR],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -114,6 +114,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 
 WSGI_APPLICATION = 'core.wsgi.application'
