@@ -7,7 +7,7 @@ class UsuarioRegistrationForm(forms.ModelForm):
 
     class Meta:
         model = Usuario
-        fields = ['nome', 'email', 'telefone', 'is_vendedor']  # Inclua os campos que você deseja no formulário
+        fields = ['nome', 'email', 'telefone', 'is_vendedor']
 
     def clean_confirmacao_senha(self):
         senha = self.cleaned_data.get('senha')
@@ -15,3 +15,10 @@ class UsuarioRegistrationForm(forms.ModelForm):
         if senha != confirmacao_senha:
             raise forms.ValidationError('As senhas não correspondem.')
         return confirmacao_senha
+
+    def save(self, commit=True):
+        usuario = super().save(commit=False)
+        usuario.set_password(self.cleaned_data['senha'])  # Configura a senha corretamente
+        if commit:
+            usuario.save()
+        return usuario
