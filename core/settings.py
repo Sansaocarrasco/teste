@@ -23,14 +23,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # required by all-auth
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+
+
 
     # providers all-auth
         # https://django-allauth.readthedocs.io/en/latest/installation.html
-        'allauth.socialaccount.providers.google',
+     
         #'allauth.socialaccount.providers.instagram',
         #'allauth.socialaccount.providers.apple',
         #'allauth.socialaccount.providers.facebook',
