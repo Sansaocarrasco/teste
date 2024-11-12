@@ -44,6 +44,12 @@ INSTALLED_APPS = [
 
 ]
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Certifique-se de que a pasta "static" existe
+]
+
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # configurações servem apenas para send_common (SMTP using DJango)
@@ -55,9 +61,9 @@ EMAIL_HOST_PASSWORD = 'xxxxxxxxxx'
 DEFAULT_FROM_EMAIL = 'no-reply@projetosd.com.br'
 DEFAULT_REPLY_TO = 'falecom@projetosd.com.br'
 
-LOGIN_REDIRECT_URL = '/'  # Página para onde o usuário será redirecionado após o login
-LOGOUT_REDIRECT_URL = '/'  # Página para onde o usuário será redirecionado após o logout
 
+
+STATIC_URL = '/static/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
