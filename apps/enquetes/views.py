@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
-from .forms import UsuarioRegistrationForm
+from .forms import UserRegistrationForm
 
 def register(request):
     if request.method == 'POST':
-        form = UsuarioRegistrationForm(request.POST)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()  # Salva os dados no modelo Usuario
-            return redirect('login')  # Redireciona para a página de login após registro
+            form.save()
+            return redirect('login')  # Redireciona para a página de login após registro bem-sucedido
     else:
-        form = UsuarioRegistrationForm()
+        form = UserRegistrationForm()
     return render(request, 'registration/register.html', {'form': form})
