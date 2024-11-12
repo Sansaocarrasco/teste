@@ -20,6 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
+    
     
     # required by all-auth
 
@@ -61,6 +64,9 @@ EMAIL_HOST_PASSWORD = 'xxxxxxxxxx'
 DEFAULT_FROM_EMAIL = 'no-reply@projetosd.com.br'
 DEFAULT_REPLY_TO = 'falecom@projetosd.com.br'
 
+LOGIN_REDIRECT_URL = '/'  # Página para redirecionar após login bem-sucedido
+LOGOUT_REDIRECT_URL = '/'  # Página para redirecionar após logout
+LOGIN_URL = '/accounts/login/'  # Página padrão de login (pode ser personalizada)
 
 
 STATIC_URL = '/static/'
