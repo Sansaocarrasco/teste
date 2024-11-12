@@ -8,5 +8,6 @@ app_name = 'enquetes'
 
 
 urlpatterns = [
+    path('register/', views.register, name='register'),
 
 ]
