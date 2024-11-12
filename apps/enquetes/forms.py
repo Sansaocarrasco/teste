@@ -1,10 +1,17 @@
 from django import forms
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from .models import Usuario
 
-class UserRegistrationForm(UserCreationForm):
-    email = forms.EmailField(required=True, help_text='Obrigatório. Insira um e-mail válido.')
+class UsuarioRegistrationForm(forms.ModelForm):
+    senha = forms.CharField(label='Senha', widget=forms.PasswordInput)
+    confirmacao_senha = forms.CharField(label='Confirme a senha', widget=forms.PasswordInput)
 
     class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        model = Usuario
+        fields = ['nome', 'email', 'telefone', 'is_vendedor']  # Inclua os campos que você deseja no formulário
+
+    def clean_confirmacao_senha(self):
+        senha = self.cleaned_data.get('senha')
+        confirmacao_senha = self.cleaned_data.get('confirmacao_senha')
+        if senha != confirmacao_senha:
+            raise forms.ValidationError('As senhas não correspondem.')
+        return confirmacao_senha
