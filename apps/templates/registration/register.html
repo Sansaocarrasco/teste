@@ -13,44 +13,38 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #333;
-            overflow: hidden;
+            margin: 0;
         }
 
         .register-container {
             background: white;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 20px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
+            max-width: 360px;
             text-align: center;
-            animation: fadeIn 1s ease-out;
         }
 
         .register-container h2 {
-            margin-bottom: 20px;
-            font-size: 28px;
-            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 24px;
             color: #ff7e5f;
         }
 
         .register-container form {
             display: flex;
             flex-direction: column;
-            align-items: center;
         }
 
         .register-container form input {
             width: 100%;
-            max-width: 300px;
-            margin-bottom: 15px;
             padding: 10px;
-            font-size: 16px;
+            margin-bottom: 12px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            outline: none;
-            transition: border-color 0.3s ease;
+            font-size: 14px;
+            transition: border-color 0.3s;
         }
 
         .register-container form input:focus {
@@ -58,60 +52,45 @@
         }
 
         .register-container form button {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            background: #ff7e5f;
             color: white;
-            padding: 10px 20px;
+            padding: 10px;
             border: none;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: background 0.3s ease;
         }
 
         .register-container form button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(255, 126, 95, 0.5);
+            background: #feb47b;
         }
 
         .register-container .footer {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #555;
+            margin-top: 10px;
+            font-size: 13px;
         }
 
         .register-container .footer a {
             color: #ff7e5f;
             text-decoration: none;
-            font-weight: bold;
         }
 
         .register-container .footer a:hover {
             text-decoration: underline;
         }
-
-        /* Animação */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10%);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 <body>
     <div class="register-container">
-        <h2>Registro | Distribulanche</h2>
+        <h2>Crie sua conta</h2>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Registrar</button>
         </form>
         <div class="footer">
-            <p>Já tem uma conta? Faça login</a></p>
+            <p>Já tem uma conta? <a href="{% url 'login' %}">Entre aqui</a></p>
         </div>
     </div>
 </body>
