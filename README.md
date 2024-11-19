@@ -74,7 +74,7 @@ http://localhost:8000
 ---
 
 
-## 👥 **Contribuidores**
+## 👥 **Contribuidore**
 
 Projeto desenvolvido por estudantes da **UNIVASF** como parte da disciplina de **Sistemas Distribuídos**:
 
