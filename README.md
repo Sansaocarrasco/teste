@@ -13,7 +13,7 @@
 
 ## 📋 **Descrição do Projeto**
 
-O **DistribuLanche** é uma aplicação web desenvolvida como parte da disciplina de **Sistemas Distribuídos** na **UNIVASF**. O sistema oferece uma plataforma para compra e venda de lanches, permitindo:
+O **DstribuLanche** é uma aplicação web desenvolvida como parte da disciplina de **Sistemas Distribuídos** na **UNIVASF**. O sistema oferece uma plataforma para compra e venda de lanches, permitindo:
 
 - **Clientes**: Navegar pelo catálogo de lanches, adicionar itens ao carrinho e realizar pedidos.
 - **Administradores**: Gerenciar produtos, monitorar pedidos e controlar o fluxo de vendas.
